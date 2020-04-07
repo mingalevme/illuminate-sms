@@ -1,0 +1,41 @@
+{
+    "name": "mingalevme/illuminate-sms",
+    "type": "library",
+    "description": "@TODO",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mingalev Mikhail",
+            "email": "mingalevme@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "laravel/framework": ">=7.0",
+        "psr/log": "^1.1",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "ext-dom": "*",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mingalevme\\Illuminate\\Sms\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mingalevme\\Tests\\Illuminate\\Sms\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mingalevme\\Illuminate\\Sms\\SmsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

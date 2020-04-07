@@ -1,0 +1,4 @@
+/vendor/
+/tests/app/bootstrap/cache/*
+composer.lock
+
