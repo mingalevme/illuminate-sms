@@ -4,13 +4,25 @@ declare(strict_types=1);
 
 namespace Mingalevme\Illuminate\Sms\Transports;
 
-class ArrayTransport implements TransportInterface
+use Mingalevme\Illuminate\Sms\Contracts\Transport;
+use Mingalevme\Illuminate\Sms\Message;
+
+class ArrayTransport implements Transport
 {
+    /** @var Message[]|array  */
     protected $messages = [];
 
-    public function send(string $phone, string $message): bool
+    public function send(Message $message): bool
     {
-        $this->messages[] = [$phone, $message];
+        $this->messages[] = $message;
         return true;
+    }
+
+    /**
+     * @return Message[]|array
+     */
+    public function getMessages(): array
+    {
+        return $this->messages;
     }
 }

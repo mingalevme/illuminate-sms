@@ -13,11 +13,10 @@
         "php": ">=7.1",
         "ext-json": "*",
         "laravel/framework": ">=7.0",
-        "psr/log": "^1.1",
+        "psr/log": "^1.0",
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
-        "ext-dom": "*",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {

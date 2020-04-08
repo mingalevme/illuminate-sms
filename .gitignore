@@ -1,4 +1,5 @@
 /vendor/
 /tests/app/bootstrap/cache/*
+/tests/app/storage/*
 composer.lock
 

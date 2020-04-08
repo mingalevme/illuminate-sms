@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Mingalevme\Illuminate\Sms\Transports;
 
-class NullTransport implements TransportInterface
+use Mingalevme\Illuminate\Sms\Contracts\Transport;
+use Mingalevme\Illuminate\Sms\Message;
+
+class NullTransport implements Transport
 {
-    public function send(string $phone, string $message): bool
+    public function send(Message $message): bool
     {
         return true;
     }

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Mingalevme\Illuminate\Sms;
 
-use Mingalevme\Illuminate\Sms\Jobs\SendSmsMessage;
-use Mingalevme\Illuminate\Sms\Transports\TransportInterface;
 use Illuminate\Contracts\Bus\Dispatcher as BusDispatcher;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\NotificationSender;
+use Mingalevme\Illuminate\Sms\Contracts\Transport;
+use Mingalevme\Illuminate\Sms\Jobs\SendSmsMessage;
 
 /**
  * @see NotificationSender
@@ -18,10 +18,10 @@ class Channel
     /** @var string */
     protected $name;
 
-    /** @var TransportInterface */
+    /** @var Transport */
     protected $transport;
 
-    public function __construct(string $name, TransportInterface $transport)
+    public function __construct(string $name, Transport $transport)
     {
         $this->name = $name;
         $this->transport = $transport;
@@ -32,7 +32,7 @@ class Channel
         return $this->name;
     }
 
-    public function getTransport(): TransportInterface
+    public function getTransport(): Transport
     {
         return $this->transport;
     }

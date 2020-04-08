@@ -1,10 +1,10 @@
 <?php
 
-namespace Mingalevme\Illuminate\Sms\Transports;
+namespace Mingalevme\Illuminate\Sms\Contracts;
 
 use Mingalevme\Illuminate\Sms\Message;
 
-interface TransportInterface
+interface Transport
 {
     public function send(Message $message): bool;
 }

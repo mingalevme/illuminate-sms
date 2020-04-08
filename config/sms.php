@@ -30,19 +30,23 @@ return [
     | sending an sms. You will specify which one you are using for your
     | channels below. You are free to add additional channels as required.
     |
-    | Supported: "smsc", "null", "array"
+    | Supported: "smsc", "log", "null", "array"
     |
     */
 
     'channels' => [
         'smsc' => [
             'transport' => 'smsc',
-            'login' => env('SMSC_LOGIN'),
-            'password' => env('SMSC_PASSWORD'),
-            'shortenLinks' => (bool) env('SMSC_SHORTEN_LINKS', false),
+            'login' => env('SMS_SMSC_LOGIN'),
+            'password' => env('SMS_SMSC_PASSWORD'),
+            'shortenLinks' => (bool) env('SMS_SMSC_SHORTEN_LINKS'),
         ],
         'array' => [
             'transport' => 'array',
+        ],
+        'log' => [
+            'transport' => 'log',
+            'channel' => env('SMS_LOG_CHANNEL', env('LOG_CHANNEL', 'syslog')),
         ],
         'null' => [
             'transport' => 'null',

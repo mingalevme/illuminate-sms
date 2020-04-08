@@ -6,12 +6,13 @@ namespace Mingalevme\Illuminate\Sms\Transports;
 
 use Illuminate\Http\Client\Response as HttpResponse;
 use Illuminate\Support\Facades\Http;
+use Mingalevme\Illuminate\Sms\Contracts\Transport;
 use Mingalevme\Illuminate\Sms\Exception;
 use Mingalevme\Illuminate\Sms\Message;
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\NullLogger;
 
-class SmscTransport implements TransportInterface
+class SmscTransport implements Transport
 {
     use LoggerAwareTrait;
 
