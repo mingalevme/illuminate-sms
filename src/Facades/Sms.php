@@ -33,6 +33,12 @@ use Mingalevme\Illuminate\Sms\Message;
  * @method static Transport getTransport()
  * @see Channel::getTransport()
  *
+ * @see Facade::spy()
+ * @method static shouldHaveReceived(string $method = null, array $args = null)
+ * @method static shouldNotHaveReceived(string $method = null, array $args = null)
+ * @method static shouldHaveBeenCalled()
+ * @method static shouldNotHaveBeenCalled(array $args = null)
+ *
  * @see Manager
  */
 class Sms extends Facade
