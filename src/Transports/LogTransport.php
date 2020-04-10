@@ -27,6 +27,7 @@ class LogTransport implements Transport
     public function send(Message $message): bool
     {
         $this->logger->debug($this->format($message));
+        return true;
     }
 
     protected function format(Message $message): string
